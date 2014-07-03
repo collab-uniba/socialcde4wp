@@ -1,0 +1,430 @@
+﻿<phone:PhoneApplicationPage 
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+	xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+	xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ic="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions"
+	mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+	x:Class="SocialCDE.ProfilePivot"
+	FontFamily="{StaticResource PhoneFontFamilyNormal}"
+	FontSize="{StaticResource PhoneFontSizeNormal}"
+	Foreground="{StaticResource PhoneForegroundBrush}"
+	SupportedOrientations="Portrait" Orientation="Portrait"
+	shell:SystemTray.IsVisible="True">
+
+	<!--LayoutRoot è la griglia radice in cui viene inserito tutto il contenuto della pagina-->
+	<Grid x:Name="LayoutRoot">
+		<Grid.Background>
+			<ImageBrush Stretch="Fill" ImageSource="Sfondo.jpg"/>
+		</Grid.Background>
+		<controls:Pivot x:Name="Schede" Title="" Foreground="{x:Null}" Margin="0,-2,0,2">
+			<!--Elemento pivot 1-->
+			<controls:PivotItem x:Name="Profile" Header="Profile" Foreground="#FF081E97" Background="{x:Null}">
+				<Grid>
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+				<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<StackPanel x:Name="TPProfile" Grid.Row="0" Margin="-12,-132,-12,0" Width="480" Height="110" VerticalAlignment="Top" d:LayoutOverrides="Height">
+						<TextBlock x:Name="ApplicationTitle" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF0E1F7A" Margin="12,0" TextAlignment="Center"><Run Text="S"/><Run Text="ocial"/><Run Text="CDE"/></TextBlock>
+						<TextBlock x:Name="PageTitle" Margin="3,-7,6,0" Style="{StaticResource PhoneTextTitle1Style}" Height="90" Foreground="#FF0E1F7A" FontSize="46.667"><Run FontSize="8"/><LineBreak/><Run FontSize="40" Text="      Profile"/></TextBlock>
+					</StackPanel>
+
+		<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<Grid x:Name="CPProfile" Margin="0,23,0,-2">
+						<Image x:Name="ImageProfileW" HorizontalAlignment="Left" Margin="2,-115,0,0" Source="woman.jpg" Stretch="Fill" Width="45" Height="45" VerticalAlignment="Top" d:LayoutOverrides="Height"/>
+						<Button x:Name="Glass" Content="Button" Margin="342,-161,59,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55" Height="55" VerticalAlignment="Top">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSkills" TargetPage="/Skills.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="L10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="Setup" Content="Button" VerticalAlignment="Top" Margin="378,-161,23,0" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="55" Height="55" BorderThickness="0">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSetup" TargetPage="/Setup.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="In10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="LogOut" Content="Button" VerticalAlignment="Top" Margin="0,-161,-12,0" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="55" Height="55" HorizontalAlignment="Right" BorderThickness="0">
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="s1.png"/>
+							</Button.Background>
+						</Button>
+						<Border x:Name="BPosts" BorderBrush="#FF0E1F7A" BorderThickness="1" Height="56" Margin="0,-111,150,0" VerticalAlignment="Top" Width="76" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+						<TextBlock x:Name="Posts" Height="20" Margin="0,-110,151,0" TextWrapping="Wrap" Text="Posts" VerticalAlignment="Top" Foreground="#FF0E1F7A" FontWeight="Bold" FontSize="13.333" TextAlignment="Center" Width="74" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+						<TextBlock x:Name="NPosts" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Width="74" Height="34" Margin="0,-90,151,0" FontSize="13.333" Foreground="#FF0E1F7A"/>
+						<Border x:Name="BFollowing" BorderBrush="#FF0E1F7A" BorderThickness="1" Height="56" Margin="0,-111,75,0" VerticalAlignment="Top" Width="76" HorizontalAlignment="Right" d:LayoutOverrides="Width"/>
+						<TextBlock x:Name="Following" HorizontalAlignment="Right" Height="20" Margin="0,-110,76,0" TextWrapping="Wrap" Text="Following" VerticalAlignment="Top" Width="74" Foreground="#FF0E1F7A" FontSize="13.333" TextAlignment="Center" FontWeight="Bold"/>
+						<TextBlock x:Name="NFollowing" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13.333" Width="74" Height="34" Margin="0,-90,76,0" Foreground="#FF0E1F7A"/>
+						<Border x:Name="BFollowers" BorderBrush="#FF0E1F7A" BorderThickness="1" HorizontalAlignment="Right" Height="56" Margin="0,-111,0,0" VerticalAlignment="Top" Width="76"/>
+						<TextBlock x:Name="Followers" HorizontalAlignment="Right" Height="20" Margin="0,-110,1,0" TextWrapping="Wrap" Text="Followers" VerticalAlignment="Top" Width="74" Foreground="#FF0E1F7A" FontSize="13.333" FontWeight="Bold" TextAlignment="Center"/>
+						<TextBlock x:Name="NFollowers" HorizontalAlignment="Right" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF0E1F7A" FontSize="13.333" Width="74" Height="34" Margin="0,-90,1,0"/>
+						<TextBlock x:Name="Name" Height="45" Margin="33,-58,73,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Foreground="#FF0E1F7A" TextAlignment="Center" FontSize="25.333" Width="350"/>
+						<ScrollViewer x:Name="ScrollViewerProfile" HorizontalAlignment="Left" Width="456" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="613">
+							<Grid x:Name="GridProfile" Height="613" Width="456" ScrollViewer.VerticalScrollBarVisibility="Visible">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="152"/>
+									<RowDefinition Height="152"/>
+									<RowDefinition Height="152"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="152"/>
+									<ColumnDefinition Width="152"/>
+									<ColumnDefinition Width="152"/>
+								</Grid.ColumnDefinitions>
+								<Button x:Name="CodePlex" Content="Button" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="160" Height="160" Click="CCodePlex">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="CodePlex.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RCodePlex" HorizontalAlignment="Right" Source="Red.png" Stretch="Fill" Width="30" Margin="0,8,8,0" Height="30" VerticalAlignment="Top" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="CollabTFS" Content="Button" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="160" Grid.Column="1" Height="160" Click="CCollabTFS">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="Collab TFS.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RCollabTFS" Height="30" Source="Red.png" Stretch="Fill" VerticalAlignment="Top" Margin="0,8,8,0" RenderTransformOrigin="8,5.267" HorizontalAlignment="Right" Width="30" Grid.Column="1" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="Facebook" Content="Button" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Margin="-4" Grid.Column="2" Width="160" Height="160" Click="CFacebook">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="Facebook.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RFacebook" HorizontalAlignment="Right" Height="30" Source="Red.png" Stretch="Fill" VerticalAlignment="Top" Width="30" Margin="0,8,8,0" Grid.Column="2" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="GitHub" Content="Button" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Grid.Row="1" Width="160" Height="160" Click="CGitHub">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="GitHub.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RGitHub" Source="Red.png" Stretch="Fill" Margin="0,8,8,0" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Grid.Row="1" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="LinkedIn" Content="Button" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="160" Height="160" Grid.Column="1" Grid.Row="1" Click="CLinkedIn">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="Linkedln.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RLinkedIn" HorizontalAlignment="Right" Source="Red.png" Stretch="Fill" Width="30" Margin="0,8,8,0" RenderTransformOrigin="7.467,9.333" Height="30" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="StatusNetCollab" Content="Button" Height="160" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Grid.Column="2" Grid.Row="1" Width="160" Click="CStatusNetCollab">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="StatusNetCollab.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RStatusNetCollab" HorizontalAlignment="Right" Source="Red.png" Stretch="Fill" Width="30" Margin="0,8,8,0" Height="30" VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" d:LayoutOverrides="GridBox"/>
+								<Button x:Name="TFSPucrs" Content="Button" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="160" BorderThickness="0" Grid.Row="2" Width="160" Click="CTFSPucrs">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="TFSPucrs.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RTFSPucrs" Source="Red.png" Stretch="Fill" Margin="0,8,8,0" Height="30" HorizontalAlignment="Right" Width="30" d:LayoutOverrides="Height, GridBox" VerticalAlignment="Top" Grid.Row="2"/>
+								<Button x:Name="Twitter" Content="Button" Height="160" Margin="-4" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="160" Grid.Column="1" Grid.Row="2" d:LayoutOverrides="GridBox" Click="CTwitter">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="Twitter.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RTwitter" Source="Red.png" Stretch="Fill" Margin="0,8,8,0" HorizontalAlignment="Right" Width="30" d:LayoutOverrides="Height, GridBox" Height="30" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2"/>
+								<Button x:Name="Yammer" Content="Button" Height="160" Margin="-4" Width="160" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Grid.Column="2" Grid.Row="2" d:LayoutOverrides="GridBox" Click="CYammer">
+									<Button.Background>
+										<ImageBrush Stretch="Fill" ImageSource="Yammer.png"/>
+									</Button.Background>
+								</Button>
+								<Image x:Name="RYammer" HorizontalAlignment="Right" Source="Red.png" Stretch="Fill" Width="30" Margin="0,8,8,0" Height="30" d:LayoutOverrides="Height, GridBox" VerticalAlignment="Top" Grid.Column="2" Grid.Row="2"/>
+							</Grid>
+						</ScrollViewer>
+					</Grid>
+				</Grid>
+			</controls:PivotItem>
+			<controls:PivotItem x:Name="People" Header="People">
+				<Grid>
+<!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
+					<StackPanel x:Name="TPPeople" Grid.Row="0" Margin="-12,-132,-12,0" Width="480" Height="110" d:LayoutOverrides="Height" VerticalAlignment="Top">
+						<TextBlock x:Name="ApplicationTitle1" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF0E1F7A" TextAlignment="Center" Margin="12,0"><Run Text="Social"/><Run Text="CDE"/></TextBlock>
+						<TextBlock x:Name="PageTitle1" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Height="90" Foreground="#FF0E1F7A" FontSize="46.667"><Run FontSize="8"/><LineBreak/><Run FontSize="40" Text="    "/><Run FontSize="40" Text="  "/><Run FontSize="40" Text="People"/></TextBlock>
+					</StackPanel>
+
+		<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<Grid x:Name="CPPeople" Margin="0,23,0,-2">
+						<Button x:Name="Glass1" Content="Button" Height="55" Margin="342,-161,59,0" VerticalAlignment="Top" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSkills1" TargetPage="/Skills.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="L10.png"/>
+							</Button.Background>
+						</Button>
+						<Image x:Name="ImPeople" Source="p1.png" Stretch="Fill" Height="60" Margin="-4,-123,0,0" VerticalAlignment="Top" Width="60" HorizontalAlignment="Left"/>
+						<Button x:Name="Setup1" Height="55" Margin="0,-161,23,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55" HorizontalAlignment="Right">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSetup1" TargetPage="/Setup.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="In10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="LogOut1" Content="Button" Height="55" Margin="0,-161,-12,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55" HorizontalAlignment="Right" d:LayoutOverrides="Width">
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="s1.png"/>
+							</Button.Background>
+						</Button>
+						<ScrollViewer x:Name="ScrollViewerPeople" HorizontalAlignment="Left" Width="456" Height="613" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}">
+							<Grid x:Name="GridPeople" HorizontalAlignment="Left" Height="613" VerticalAlignment="Top" Width="456">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="50" MaxHeight="50" MinHeight="50"/>
+									<RowDefinition Height="Auto" MinHeight="100"/>
+									<RowDefinition Height="50" MaxHeight="50" MinHeight="50"/>
+									<RowDefinition Height="Auto" MinHeight="100"/>
+									<RowDefinition Height="50" MaxHeight="50" MinHeight="50"/>
+									<RowDefinition Height="Auto" MinHeight="100"/>
+									<RowDefinition Height="50" MaxHeight="50" MinHeight="50"/>
+									<RowDefinition Height="Auto" MinHeight="100"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="456"/>
+								</Grid.ColumnDefinitions>
+								<TextBlock x:Name="Suggestions" Height="30" TextWrapping="Wrap" Text="Suggestions:" Foreground="#FF0E1F7A" Width="456" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Center"/>
+								<Grid x:Name="GridSuggestions" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="1" Width="456">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="100"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="228"/>
+										<ColumnDefinition Width="228"/>
+									</Grid.ColumnDefinitions>
+									<Button x:Name="BW1" Content="Button" Margin="64,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="100" Width="100">
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="woman.jpg"/>
+										</Button.Background>
+									</Button>
+									<Button x:Name="BM1" Content="Button" Grid.Column="1" Margin="64,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Height="100" VerticalAlignment="Center" Width="100" HorizontalAlignment="Center">
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="man.jpg"/>
+										</Button.Background>
+									</Button>
+								</Grid>
+								<TextBlock x:Name="Following1" Margin="0" Grid.Row="2" TextWrapping="Wrap" Text="Following:" Foreground="#FF0E1F7A" HorizontalAlignment="Left" VerticalAlignment="Center" Width="456" Height="30"/>
+								<Grid x:Name="GrisFollowing" Margin="0" Grid.Row="3" Width="456" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="100"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="228"/>
+										<ColumnDefinition Width="228"/>
+									</Grid.ColumnDefinitions>
+									<Button x:Name="BM2" Content="Button" Margin="64,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" HorizontalAlignment="Center" Width="100" VerticalAlignment="Center" Height="100">
+										<Custom:Interaction.Triggers>
+											<Custom:EventTrigger EventName="Click">
+												<ic:NavigateToPageAction x:Name="GoFollowing" TargetPage="/Followings.xaml"/>
+											</Custom:EventTrigger>
+										</Custom:Interaction.Triggers>
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="man.jpg"/>
+										</Button.Background>
+									</Button>
+									<Button x:Name="BW2" Content="Button" Grid.Column="1" Margin="64,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="woman.jpg"/>
+										</Button.Background>
+									</Button>
+								</Grid>
+								<TextBlock x:Name="Followers1" Margin="0" Grid.Row="4" TextWrapping="Wrap" Text="Followers:" Foreground="#FF0E1F7A" Width="456" Height="30" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+								<Grid x:Name="GridFollowers" Margin="0" Grid.Row="5" Width="456" Height="100" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="100"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="228"/>
+										<ColumnDefinition Width="228"/>
+									</Grid.ColumnDefinitions>
+									<Button x:Name="BW3" Content="Button" Margin="64,0" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<Custom:Interaction.Triggers>
+											<Custom:EventTrigger EventName="Click">
+												<ic:NavigateToPageAction x:Name="GoFollowers" TargetPage="/Followers.xaml"/>
+											</Custom:EventTrigger>
+										</Custom:Interaction.Triggers>
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="woman.jpg"/>
+										</Button.Background>
+									</Button>
+									<Button x:Name="BM3" Content="Button" Grid.Column="1" Margin="64,0" Foreground="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0,3,0,0" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="man.jpg"/>
+										</Button.Background>
+									</Button>
+								</Grid>
+								<TextBlock x:Name="Hiddens" Margin="0" Grid.Row="6" TextWrapping="Wrap" Text="Hiddens:" Foreground="#FF0E1F7A" Width="456" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+								<Grid x:Name="GridHiddens" Margin="0" Grid.Row="7" Width="456" Height="100" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="100"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="228"/>
+										<ColumnDefinition Width="228"/>
+									</Grid.ColumnDefinitions>
+									<Button x:Name="BM4" Content="Button" Margin="64,0" BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<Custom:Interaction.Triggers>
+											<Custom:EventTrigger EventName="Click">
+												<ic:NavigateToPageAction x:Name="GoHiddens" TargetPage="/Hiddens.xaml"/>
+											</Custom:EventTrigger>
+										</Custom:Interaction.Triggers>
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="man.jpg"/>
+										</Button.Background>
+									</Button>
+									<Button x:Name="BW4" Content="Button" Grid.Column="1" Margin="64,0" Foreground="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center">
+										<Button.Background>
+											<ImageBrush Stretch="Fill" ImageSource="woman.jpg"/>
+										</Button.Background>
+									</Button>
+								</Grid>
+							</Grid>
+						</ScrollViewer>
+					</Grid>
+				</Grid>
+			</controls:PivotItem>
+
+ 			<!--Elemento pivot 2-->
+			<controls:PivotItem x:Name="HomeTL" Header="Home Timeline">
+				<Grid>
+					<!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
+
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+				<!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
+					<StackPanel x:Name="TPHomeTL" Grid.Row="0" Margin="-12,-132,-12,0" Width="480" Height="110" VerticalAlignment="Top" d:LayoutOverrides="Height">
+						<TextBlock x:Name="ApplicationTitle2" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF0E1F7A" TextAlignment="Center" Margin="12,0"><Run Text="Social"/><Run Text="CDE"/></TextBlock>
+						<TextBlock x:Name="PageTitle2" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF0E1F7A" FontSize="46.667"><Run FontSize="8"/><LineBreak/><Run FontSize="40" Text="     "/><Run FontSize="40" Text=" "/><Run FontSize="40" Text="Home Timeline"/></TextBlock>
+					</StackPanel>
+
+		<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<Grid x:Name="CPHomeTL" Margin="0,23,0,-2">
+						<Image x:Name="ImHome" Margin="2,-115,0,0" Source="c5.png" Stretch="Fill" Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+						<Button x:Name="Glass2" Content="Button" Height="55" Margin="342,-161,59,0" VerticalAlignment="Top" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSkills2" TargetPage="/Skills.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="L10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="Setup2" Content="Button" Height="55" Margin="0,-161,23,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55" HorizontalAlignment="Right">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSetup2" TargetPage="/Setup.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="In10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="LogOut2" Content="Button" Height="55" Margin="413,-161,-12,0" VerticalAlignment="Top" Width="55" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="s1.png"/>
+							</Button.Background>
+						</Button>
+						<ScrollViewer x:Name="ScrollViewerHomeTL" HorizontalAlignment="Left" Margin="0" Width="456" Background="{x:Null}" BorderBrush="#FF0E1F7A" Foreground="{x:Null}" Height="564" VerticalAlignment="Top" BorderThickness="1" ScrollViewer.VerticalScrollBarVisibility="Visible">
+							<Grid x:Name="GridHomeTL" Height="564" Width="456" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="Auto" MinHeight="64"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="100"/>
+									<ColumnDefinition Width="356"/>
+								</Grid.ColumnDefinitions>
+								<Image x:Name="ImmW" Source="woman.jpg" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+								<TextBlock x:Name="TextPostHTL" Grid.Column="1" Margin="4,0,0,0" TextWrapping="Wrap" Text="This is a post" Foreground="#FF0E1F7A" Width="350" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+								<TextBlock x:Name="OlderPostHTL" TextWrapping="Wrap" Text="There are no older post" Grid.Column="1" Margin="4,0,0,0" Foreground="#FF0E1F7A" Width="350" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" FontSize="16"/>
+							</Grid>
+						</ScrollViewer>
+						<TextBox x:Name="YourPostHTL" Height="56" Margin="-12,0,-12,6" TextWrapping="Wrap" Text="Insert your post" VerticalAlignment="Bottom" Background="White" BorderBrush="#FF0E1F7A" Foreground="#FF0E1F7A" BorderThickness="1" Width="480" VerticalScrollBarVisibility="Auto" FontSize="16" GotFocus="SelectPostHTL" LostFocus="ControlPostHTL"/>
+					</Grid>
+				</Grid>
+			</controls:PivotItem>
+			<controls:PivotItem x:Name="IterationTL" Header="item5">
+				<Grid>
+					<!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
+
+					<!--ContentPanel - inserire qui contuto aggiuntivo-->
+				<!--TitlePanel contiene il nome dell'applicazione e il titolo della pagina-->
+					<StackPanel x:Name="TPIterationTL" Grid.Row="0" Margin="-12,-132,-12,0" Width="480" Height="110" VerticalAlignment="Top">
+						<TextBlock x:Name="ApplicationTitle3" Style="{StaticResource PhoneTextNormalStyle}" Foreground="#FF0E1F7A" TextAlignment="Center" Margin="12,0"><Run Text="Social"/><Run Text="CDE"/></TextBlock>
+						<TextBlock x:Name="PageTitle3" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" Foreground="#FF0E1F7A" FontSize="46.667" Height="90"><Run FontSize="8"/><LineBreak/><Run FontSize="40" Text="    "/><Run FontSize="40" Text="  "/><Run FontSize="40" Text="Iteration Timeline"/></TextBlock>
+					</StackPanel>
+
+		<!--ContentPanel - inserire qui contuto aggiuntivo-->
+					<Grid x:Name="CPIterationTL" Margin="0,23,0,-2">
+						<Image x:Name="IconTime" HorizontalAlignment="Left" Margin="2,-115,0,0" Source="IconTime.png" Stretch="Fill" Width="45" Height="45" VerticalAlignment="Top" d:LayoutOverrides="Height"/>
+						<Button x:Name="Glass3" Content="Button" Height="55" Margin="342,-161,59,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSkills3" TargetPage="/Skills.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="L10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="Setup3" Content="Button" Height="55" Margin="0,-161,23,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55" HorizontalAlignment="Right" d:LayoutOverrides="Width">
+							<Custom:Interaction.Triggers>
+								<Custom:EventTrigger EventName="Click">
+									<ic:NavigateToPageAction x:Name="GoSetup3" TargetPage="/Setup.xaml"/>
+								</Custom:EventTrigger>
+							</Custom:Interaction.Triggers>
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="In10.png"/>
+							</Button.Background>
+						</Button>
+						<Button x:Name="LogOut3" Content="Button" Height="55" Margin="413,-161,-12,0" VerticalAlignment="Top" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0" Width="55">
+							<Button.Background>
+								<ImageBrush Stretch="Fill" ImageSource="s1.png"/>
+							</Button.Background>
+						</Button>
+						<ScrollViewer x:Name="ScrollViewerIterationTL" HorizontalAlignment="Left" Height="564" VerticalAlignment="Top" Width="456" Background="{x:Null}" BorderBrush="#FF0E1F7A" BorderThickness="1">
+							<Grid x:Name="GridIterationTL" Height="564" Width="456" HorizontalAlignment="Left" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Visible">
+								<Grid.RowDefinitions>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="100"/>
+									<RowDefinition Height="Auto"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="100"/>
+									<ColumnDefinition Width="356"/>
+								</Grid.ColumnDefinitions>
+								<Image x:Name="ImmM" Margin="0" Source="man.jpg" Stretch="Fill" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+								<TextBlock x:Name="TextPostITL" Grid.Column="1" Margin="4,0,0,0" TextWrapping="Wrap" Text="This is a post" Foreground="#FF0E1F7A" Width="350" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+								<TextBlock x:Name="OlderPostITL" Grid.Column="1" Margin="4,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="There are no older post" Foreground="#FF0E1F7A" Width="350" Height="100" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="16"/>
+							</Grid>
+						</ScrollViewer>
+						<TextBox x:Name="YourPostITL" Height="56" Margin="-12,0,-12,6" TextWrapping="Wrap" Text="Insert your post" VerticalAlignment="Bottom" Width="480" BorderBrush="#FF0E1F7A" BorderThickness="1" FontSize="16" Foreground="#FF0E1F7A" Background="White" VerticalScrollBarVisibility="Auto" GotFocus="SelectPostITL" LostFocus="ControlPostITL"/>
+					</Grid>
+				</Grid>
+			</controls:PivotItem>
+		</controls:Pivot>
+	</Grid>
+</phone:PhoneApplicationPage>
